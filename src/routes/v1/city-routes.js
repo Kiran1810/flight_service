@@ -4,11 +4,42 @@ const { CityController } = require('../../controllers');
 const{CityMiddlewares} = require('../../middlewares');
 const router = express.Router();
 
-router.post('/',
-CityMiddlewares.validateCreateRequest,
-CityController.createCity
-);
-router.delete('/:id',
-CityController.destroyCity
-);
+/**
+ * @swagger
+ * /cities:
+ *   post:
+ *     summary: Create a new city
+ *     tags: [Cities]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: City created successfully
+ */
+router.post('/',CityMiddlewares.validateCreateRequest,CityController.createCity);
+
+/**
+ * @swagger
+ * /cities/{id}:
+ *   delete:
+ *     summary: Delete a city by ID
+ *     tags: [Cities]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: City deleted successfully
+ */
+router.delete('/:id',CityController.destroyCity);
 module.exports=router;
