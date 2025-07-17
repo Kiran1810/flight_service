@@ -59,7 +59,7 @@ router.get('/',AirportController.getAirports);
  *       200:
  *         description: Airport details retrieved successfully
  */
-router.get('/id',AirportController.getAirport);
+router.get('/:id',AirportController.getAirport);
 
 /**
  * @swagger
@@ -77,5 +77,5 @@ router.get('/id',AirportController.getAirport);
  *       200:
  *         description: Airport deleted successfully
  */
-router.delete('/id',AirportController.destroyAirport);
+router.delete('/:id',AirportController.destroyAirport);
 module.exports=router;

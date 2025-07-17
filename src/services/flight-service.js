@@ -49,16 +49,15 @@ async function getAllFlights(query){
     [Op.between]:[query.tripDate, query.tripDate + endingTripTime]
 }
   }
-  /*if(query.sort){
+  if(query.sort){
     const params= query.sort.split(',');
  const sortFilters = params.map((param)=>param.split('_'));
- sortFilter= sort.Filters
-  }*/
-  console.log(customFilter//,sortFilter
-  );
+ sortFilter= sortFilters
+  }
+ 
   try{
-    const flights= await flightRepository.getAllFlights(customFilter //, sortFilter
-    );
+    const flights= await flightRepository.getAllFlights(customFilter ,sortFilter);
+     console.log(customFilter);
     return flights;
     } 
     catch(error){

@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { CityController } = require('../../controllers');
-const{CityMiddlewares} = require('../../middlewares');
+
 const router = express.Router();
 
 /**
@@ -23,7 +23,7 @@ const router = express.Router();
  *       201:
  *         description: City created successfully
  */
-router.post('/',CityMiddlewares.validateCreateRequest,CityController.createCity);
+router.post('/',CityController.createCity);
 
 /**
  * @swagger

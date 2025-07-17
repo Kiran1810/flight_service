@@ -1,4 +1,4 @@
-const CrudRepository=require('./crud-repositry');
+const CrudRepository=require('./crud-repositry.js');
 const{City}=require('../models');
 
 class CityRepository extends CrudRepository{

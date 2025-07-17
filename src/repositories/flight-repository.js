@@ -1,4 +1,4 @@
-const CrudRepository=require('./crud-repositry');
+const CrudRepository=require('./crud-repositry.js');
 const { Sequelize} = require('sequelize')
 const db =require('../models')
 const {addRowLockOnFlights}=require('./queries');
