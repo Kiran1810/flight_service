@@ -18,17 +18,23 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             properties:
+ *               flightNumber:
+ *                 type: string
  *               airplaneId:
  *                 type: integer
  *               departureAirportId:
- *                 type: integer
+ *                 type: string
  *               arrivalAirportId:
- *                 type: integer
+ *                 type: string
  *               departureTime:
  *                 type: string
  *               arrivalTime:
  *                 type: string
  *               price:
+ *                 type: number
+ *               boardingGate:
+ *                 type: string
+ *               totalSeats: 
  *                 type: number
  *     responses:
  *       201:

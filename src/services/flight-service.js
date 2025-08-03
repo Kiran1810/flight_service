@@ -7,7 +7,9 @@ const flightRepository = new FlightRepository();
 
 async function createFlight(data){
     try{
+      console.log("data",data);
         const flight= await flightRepository.create(data);
+        console.log("flights",flight)
         return flight;
       
         }catch(error){
@@ -82,7 +84,8 @@ async function getFlight(id){
 
 async function updateSeats(data){
   try{
-    const response= await FlightRepository.updateRemainingSeats(data.flightId,data.seats,data.dec);
+    console.log("flightId in booking:", data.flightId);
+    const response= await flightRepository.updateRemainingSeats(data.flightId,data.seats,data.dec);
     return response;
     } 
     catch(error){
