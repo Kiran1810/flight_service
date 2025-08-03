@@ -4,6 +4,7 @@ const AppError =require('../utils/errors/app-error');
 
 
 const airplaneRepository = new AirplaneRepository();
+
 async function createAirplane(data){
     try{
         const airplane= await airplaneRepository.create(data);
@@ -63,7 +64,7 @@ async function createAirplane(data){
     
 }
     }
-   /* async function updateAirplane(id){
+    async function updateAirplane(id){
         try{
             const response =await airplaneRepository.update(id);
        
@@ -76,7 +77,7 @@ async function createAirplane(data){
         throw new AppError('cannot update the information in the airplanes',StatusCodes.INTERNAL_SERVER_ERROR); 
     
 }
-    }*/
+    }
         module.exports={
-            createAirplane,getAirplanes,getAirplane,destroyAirplane
+            createAirplane,getAirplanes,getAirplane,destroyAirplane,updateAirplane
         }

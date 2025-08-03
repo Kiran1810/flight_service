@@ -1,4 +1,4 @@
-const CrudRepository=require('./crud-repositry');
+const CrudRepository=require('./crud-repositry.js');
 const{Airplane}=require('../models');
 
 class AirplaneRepository extends CrudRepository{
@@ -6,4 +6,5 @@ class AirplaneRepository extends CrudRepository{
         super(Airplane);
     }
 }
+
 module.exports =AirplaneRepository;
